@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<ThemeController>(builder: (_) {
       return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "Virus.dev",
         theme: themeController.isDarkMode
             ? ThemeData.dark()
