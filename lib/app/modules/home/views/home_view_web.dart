@@ -6,6 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_portfolio/app/data/theme_data/theme_controller.dart';
 import 'package:my_portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:my_portfolio/app/modules/home/views/widgets/custom_tabbar.dart';
+import 'package:my_portfolio/app/modules/home/views/widgets/floating_containers.dart';
 
 class HomeViewWeb extends GetView<HomeController> {
   HomeViewWeb({Key? key}) : super(key: key);
@@ -17,18 +19,6 @@ class HomeViewWeb extends GetView<HomeController> {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Stack(
         children: [
-          Positioned(
-            bottom: 500.h,
-            right: 190.w,
-            child: Container(
-              height: 300.h,
-              width: 300.w,
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                shape: BoxShape.circle,
-              ),
-            ),
-          ),
           Positioned(
             top: 500.h,
             left: 190.w,
@@ -46,7 +36,7 @@ class HomeViewWeb extends GetView<HomeController> {
             child: Container(
               height: double.maxFinite,
               width: double.maxFinite,
-              decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
+              decoration: BoxDecoration(color: Colors.white.withOpacity(0.2)),
             ),
           ),
           Positioned(
@@ -104,35 +94,64 @@ class HomeViewWeb extends GetView<HomeController> {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 15.h,
-              horizontal: 10.w,
-            ),
+          Positioned(
+            top: 0.h,
+            right: 0.w,
+            child: CustomTabBar(),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: 150.w,
+            color: Color.fromARGB(255, 114, 0, 38).withOpacity(0.5),
+          ),
+          Positioned(
+            top: 200.h,
+            left: 20.w,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hey Virus",
-                      style: Theme.of(context).textTheme.headlineLarge,
-                    ),
-                    Spacer(),
-                    GetBuilder<ThemeController>(
-                      builder: (_) {
-                        return Switch(
-                          value: themeController.isDarkMode,
-                          onChanged: (value) {
-                            _.toggleDarkMode();
-                          },
-                        );
-                      },
-                    ),
-                  ],
+                Image.asset(
+                  "assets/dev.png",
+                  fit: BoxFit.cover,
+                  height: 500.h,
+                  width: 100.w,
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            top: 35.h,
+            left: 30.w,
+            child: Text(
+              "Dev Bathani",
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          Positioned(
+            top: 300.h,
+            left: 0.w,
+            child: FloatingContainer(
+              assetName: "assets/logos/flutter.png",
+            ),
+          ),
+          Positioned(
+            top: 440.h,
+            left: 10.w,
+            child: FloatingContainer(
+              assetName: "assets/logos/dart.png",
+            ),
+          ),
+          Positioned(
+            top: 300.h,
+            left: 95.w,
+            child: FloatingContainer(
+              assetName: "assets/logos/figma.png",
+            ),
+          ),
+          Positioned(
+            top: 450.h,
+            left: 70.w,
+            child: FloatingContainer(
+              assetName: "assets/logos/firebase.png",
             ),
           ),
         ],
