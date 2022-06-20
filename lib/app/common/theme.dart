@@ -7,6 +7,21 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
   primaryColor: Colors.pink,
   primaryColorLight: Colors.white60,
   textTheme: TextTheme(
+    bodyMedium: GoogleFonts.lato(
+      textStyle: TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+      ),
+    ),
+    bodySmall: GoogleFonts.roboto(
+      textStyle: TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w600,
+        color: Colors.grey,
+        fontStyle: FontStyle.italic,
+      ),
+    ),
     labelMedium: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 20.sp,
@@ -21,21 +36,21 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
         color: Colors.white,
       ),
     ),
-    displayLarge: GoogleFonts.roboto(
+    displayLarge: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 25.sp,
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
     ),
-    displayMedium: GoogleFonts.roboto(
+    displayMedium: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 20.sp,
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
     ),
-    displaySmall: GoogleFonts.roboto(
+    displaySmall: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
@@ -64,6 +79,20 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
   primaryColor: Colors.cyanAccent,
   primaryColorLight: Colors.black54,
   textTheme: TextTheme(
+    bodyMedium: GoogleFonts.lato(
+      textStyle: TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: Colors.black,
+      ),
+    ),
+    bodySmall: GoogleFonts.roboto(
+      textStyle: TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w600,
+        color: Colors.grey,
+      ),
+    ),
     labelMedium: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 25.sp,
@@ -90,21 +119,21 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         color: Colors.white,
       ),
     ),
-    displayLarge: GoogleFonts.roboto(
+    displayLarge: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 25.sp,
         fontWeight: FontWeight.w600,
         color: Colors.black,
       ),
     ),
-    displayMedium: GoogleFonts.roboto(
+    displayMedium: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 20.sp,
         fontWeight: FontWeight.w600,
         color: Colors.black,
       ),
     ),
-    displaySmall: GoogleFonts.roboto(
+    displaySmall: GoogleFonts.poppins(
       textStyle: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
