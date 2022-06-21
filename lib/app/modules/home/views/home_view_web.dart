@@ -383,15 +383,16 @@ class HomeViewWeb extends GetView<HomeController> {
             ),
           ),
           Positioned(
-            top: 200.h,
-            left: 20.w,
+            bottom: 0.h,
+            right: 140.w,
             child: Column(
               children: [
                 Image.asset(
                   "assets/dev.png",
-                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
                   height: 500.h,
-                  width: 100.w,
+                  width: 300.w,
+                  fit: BoxFit.contain,
                 ),
               ],
             ),

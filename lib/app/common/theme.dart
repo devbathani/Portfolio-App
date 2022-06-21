@@ -76,7 +76,7 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
   backgroundColor: Colors.white,
-  primaryColor: Colors.cyanAccent,
+  primaryColor: Color.fromARGB(255, 121, 21, 59).withOpacity(0.65),
   primaryColorLight: Colors.black54,
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.lato(
