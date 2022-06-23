@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_portfolio/app/data/theme_data/theme_controller.dart';
 import 'package:my_portfolio/app/modules/home/controllers/home_controller.dart';
 
 class CustomTabBar extends StatelessWidget {
-  const CustomTabBar({Key? key}) : super(key: key);
-
+  CustomTabBar({Key? key}) : super(key: key);
+  final themeController = Get.put(ThemeController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -74,7 +73,12 @@ class CustomTabBar extends StatelessWidget {
                             ),
                             Text(
                               "Home",
-                              style: Theme.of(context).textTheme.displayMedium,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium!
+                                  .copyWith(
+                                    color: Colors.black,
+                                  ),
                             ),
                           ],
                         ),
@@ -129,7 +133,12 @@ class CustomTabBar extends StatelessWidget {
                             ),
                             Text(
                               "Projects",
-                              style: Theme.of(context).textTheme.displayMedium,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium!
+                                  .copyWith(
+                                    color: Colors.black,
+                                  ),
                             ),
                           ],
                         ),
@@ -184,13 +193,28 @@ class CustomTabBar extends StatelessWidget {
                             ),
                             Text(
                               "Buy me a Coffee",
-                              style: Theme.of(context).textTheme.displayMedium,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium!
+                                  .copyWith(
+                                    color: Colors.black,
+                                  ),
                             ),
                           ],
                         ),
                       ),
                     ),
                   ),
+                );
+              },
+            ),
+            GetBuilder<ThemeController>(
+              builder: (_) {
+                return Switch(
+                  value: themeController.isDarkMode,
+                  onChanged: (value) {
+                    _.toggleDarkMode();
+                  },
                 );
               },
             ),
